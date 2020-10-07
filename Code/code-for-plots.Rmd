@@ -29,7 +29,7 @@ Notice there are too many points. Use the `dplyr` function called `filter` to
 subset to the firearm homicide and suicides only:
 
 ```{r}
-install.packages("dplyr")
+#install.packages("dplyr")
 library(dplyr)
 CDC_firearm_only <- CDC_Males_AllAges_0816_wide %>% filter(type == "Firearm") 
 
@@ -54,7 +54,7 @@ ggplot(data = CDC_firearm_only,
 # the darkest colours correspond to the lower values. Confusing!
 ggplot(data = CDC_firearm_only, 
        aes(x = adjusted.suicide.White, y = adjusted.homicide.White)) +
-  geom_point(aes(col = gun.house.prev.category)) 
+  geom_point(aes(col = gun.house.prev)) 
 ```
 
 Set the colors manually. Do this inside of the scale function:
